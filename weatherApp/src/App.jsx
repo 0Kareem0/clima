@@ -4,8 +4,17 @@ import HourlyForecast from "./components/HourlyForecast";
 import AirQualityCard from "./components/AirQualityCard";
 import ForecastCard from "./components/ForecastCard";
 import SunCard from "./components/SunCard";
+import { useEffect, useState } from "react";
 
 export default function App() {
+  const [posts, setPosts] = useState([]);
+
+    useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/posts")
+      .then((res) => res.json())
+      .then((data) => setPosts(data));
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0f172a] to-[#1e293b] text-white p-6">
       <Header />
@@ -22,6 +31,14 @@ export default function App() {
           <SunCard />
         </div>
       </div>
+      {posts.map((post) => (
+        <div 
+        className="bg-slate-800 p-6 rounded-2xl mt-6"
+        key={post.id}>
+          <h2>{post.title}</h2>
+          <p>{post.body}</p>
+        </div>
+      ))}
     </div>
   );
 }
