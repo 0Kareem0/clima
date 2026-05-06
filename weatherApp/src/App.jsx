@@ -10,9 +10,13 @@ export default function App() {
   const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts")
-      .then((res) => res.json())
-      .then((data) => setPosts(data));
+      const getData = async () =>{
+      const res = await fetch("https://jsonplaceholder.typicode.com/posts")
+      const data = await res.json()
+      setPosts(data)
+      }
+      
+      getData()
   }, []);
 
   return (
