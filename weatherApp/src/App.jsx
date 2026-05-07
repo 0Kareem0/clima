@@ -6,9 +6,8 @@ import ForecastCard from "./components/ForecastCard";
 import SunCard from "./components/SunCard";
 import { useEffect, useState } from "react";
 export default function App() {
-
-      const [data, setData] = useState(null);
-    const [city, ] = useState("suez");
+  const [data, setData] = useState(null);
+  const [city] = useState("suez");
   const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 
   useEffect(() => {
@@ -37,13 +36,12 @@ export default function App() {
           <ForecastCard />
           <SunCard />
         </div>
-      
+
         {/* <div>
           <h1>{data?.location?.name}</h1>
           <p>{data?.current?.temp_c}°C</p>
         </div> */}
       </div>
- 
     </div>
   );
 }
