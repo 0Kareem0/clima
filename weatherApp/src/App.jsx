@@ -7,6 +7,8 @@ import SunCard from "./components/SunCard";
 import { useEffect, useState } from "react";
 
 export default function App() {
+  console.log("im back");
+
   const [posts, setPosts] = useState([]);
 
     useEffect(() => {
@@ -18,6 +20,8 @@ export default function App() {
       
       getData()
   }, []);
+
+  
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0f172a] to-[#1e293b] text-white p-6">
