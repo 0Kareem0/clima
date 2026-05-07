@@ -13,7 +13,7 @@ export default function App() {
   useEffect(() => {
     const getWeather = async () => {
       const res = await fetch(
-        `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}`,
+        `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${city}&days=7&aqi=yes&alerts=yes`,
       );
       const data = await res.json();
       setData(data);

@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 export default function Header({ handleCitySearch }) {
   const [inputValue, setInputValue] = useState("");
 
-  const handleSubmit = (e) => {
+  const onSubmit = (e) => {
     e.preventDefault();
     if (inputValue.trim()) {
       handleCitySearch(inputValue.trim());
@@ -22,11 +22,11 @@ export default function Header({ handleCitySearch }) {
         <span>Radar</span>
       </div>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={onSubmit}>
         <input
-          type="text"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
+          type="text"
           placeholder="Search city..."
         />
         <button type="submit">Search</button>
