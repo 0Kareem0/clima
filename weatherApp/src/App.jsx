@@ -5,23 +5,22 @@ import AirQualityCard from "./components/AirQualityCard";
 import ForecastCard from "./components/ForecastCard";
 import SunCard from "./components/SunCard";
 import { useEffect, useState } from "react";
-
 export default function App() {
-  console.log("im back");
 
-  const [posts, setPosts] = useState([]);
+      const [data, setData] = useState(null);
+    const [city, ] = useState("suez");
+  const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 
-    useEffect(() => {
-      const getData = async () =>{
-      const res = await fetch("https://jsonplaceholder.typicode.com/posts")
-      const data = await res.json()
-      setPosts(data)
-      }
-      
-      getData()
+  useEffect(() => {
+    const getWeather = async () => {
+      const res = await fetch(
+        `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}`,
+      );
+      const data = await res.json();
+      setData(data);
+    };
+    getWeather();
   }, []);
-
-  
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0f172a] to-[#1e293b] text-white p-6">
@@ -29,7 +28,7 @@ export default function App() {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6">
         <div className="lg:col-span-2 space-y-6">
-          <WeatherCard />
+          <WeatherCard data={data} />
           <HourlyForecast />
         </div>
 
@@ -38,15 +37,13 @@ export default function App() {
           <ForecastCard />
           <SunCard />
         </div>
+      
+        {/* <div>
+          <h1>{data?.location?.name}</h1>
+          <p>{data?.current?.temp_c}°C</p>
+        </div> */}
       </div>
-      {posts.map((post) => (
-        <div 
-        className="bg-slate-800 p-6 rounded-2xl mt-6"
-        key={post.id}>
-          <h2>{post.title}</h2>
-          <p>{post.body}</p>
-        </div>
-      ))}
+ 
     </div>
   );
 }

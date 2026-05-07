@@ -1,11 +1,13 @@
-export default function WeatherCard() {
+
+
+export default function WeatherCard({data}) {
   return (
     <div className="bg-slate-800 p-6 rounded-2xl shadow-lg">
-      <h2 className="text-xl font-semibold">Cairo, Egypt</h2>
+      <h2 className="text-xl font-semibold">{data?.location?.name}</h2>
       <p className="text-gray-400 text-sm">Sunday, May 3</p>
 
       <div className="flex items-center gap-6 mt-4">
-        <h1 className="text-6xl font-bold">28°C</h1>
+        <h1 className="text-6xl font-bold">{data?.current?.temp_c}°C</h1>
         <span className="text-blue-400">Clear Skies</span>
       </div>
 
