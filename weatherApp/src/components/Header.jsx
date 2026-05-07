@@ -1,4 +1,16 @@
-export default function Header() {
+import { useState } from 'react';
+
+export default function Header({ handleCitySearch }) {
+  const [inputValue, setInputValue] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (inputValue.trim()) {
+      handleCitySearch(inputValue.trim());
+      setInputValue("");
+    }
+  };
+
   return (
     <div className="flex justify-between items-center">
       <h1 className="text-xl font-bold">☀️ clima</h1>
@@ -10,10 +22,15 @@ export default function Header() {
         <span>Radar</span>
       </div>
 
-      <input
-        placeholder="Search city..."
-        className="bg-slate-800 px-4 py-2 rounded-full text-sm"
-      />
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+          placeholder="Search city..."
+        />
+        <button type="submit">Search</button>
+      </form>
     </div>
   );
 }

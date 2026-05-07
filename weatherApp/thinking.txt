@@ -1,0 +1,5 @@
+we have 2 tasks 1 enable the search form so we can search in it 
+2 display all the info from the api rn i have only the location and the current temp 
+i dont know how to do either of those tasks xD
+okay i did the first task which is i made a function that setCity to what ever i type in the form (search)
+and in the search i made a state to track what i type and remove spaces and reset it to empty after i submit and all
