@@ -9,7 +9,7 @@ export default function Header({ handleCitySearch }) {
       handleCitySearch(inputValue.trim());
       setInputValue("");
     }
-  };
+  };    
 
   return (
     <div className="flex justify-between items-center">
