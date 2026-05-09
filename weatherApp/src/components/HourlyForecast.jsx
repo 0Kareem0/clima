@@ -1,8 +1,8 @@
 export default function HourlyForecast({ data }) {
   const allHours =
     data?.forecast?.forecastday?.[0]?.hour || [];
-    
-  // if i want to only display the next 6 hours, i can use slice
+
+  // if i want to only display the next 6 hours, i can use this
   // const currentHour = new Date().getHours();
   // const hours = allHours.slice(currentHour, currentHour + 6);  
 
