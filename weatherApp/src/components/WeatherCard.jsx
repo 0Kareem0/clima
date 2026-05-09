@@ -2,7 +2,7 @@ export default function WeatherCard({ data }) {
   return (
     <div className="bg-slate-800 p-6 rounded-2xl shadow-lg">
       <h2 className="text-xl font-semibold">{data?.location?.name}</h2>
-      <p className="text-gray-400 text-sm">Sunday, May 3</p>
+      <p className="text-gray-400 text-sm">{data?.location?.localtime}</p>
 
       <div className="flex items-center gap-6 mt-4">
         <h1 className="text-6xl font-bold">{data?.current?.temp_c}°C</h1>
@@ -11,20 +11,20 @@ export default function WeatherCard({ data }) {
 
       <div className="grid grid-cols-4 gap-4 mt-6 text-sm text-gray-300">
         <div>
-          <p>Feels Like</p>
-          <p className="text-white font-semibold">29°</p>
+          <p>Feels Like:</p>
+          <p className="text-white font-semibold"> {data?.current?.feelslike_c}°C </p>
         </div>
         <div>
-          <p>Humidity</p>
-          <p className="text-white font-semibold">28%</p>
+          <p>Humidity:</p>
+          <p className="text-white font-semibold"> {data?.current?.humidity}% </p>
         </div>
         <div>
-          <p>Wind</p>
-          <p className="text-white font-semibold">12 km/h</p>
+          <p>Wind:</p>
+          <p className="text-white font-semibold"> {data?.current?.wind_kph} km/h </p>
         </div>
         <div>
-          <p>UV</p>
-          <p className="text-yellow-400 font-semibold">4 Moderate</p>
+          <p>UV:</p>
+          <p className="text-yellow-400 font-semibold"> {data?.current?.uv} </p>
         </div>
       </div>
     </div>

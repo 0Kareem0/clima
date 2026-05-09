@@ -1,5 +1,5 @@
-export default function HourlyForecast() {
-  const hours = ["6 PM", "7 PM", "8 PM", "9 PM", "10 PM"];
+export default function HourlyForecast({ data }) {
+  const hours = data?.forecast?.forecastday[0]?.hour?.map((h) => h.time.split(" ")[1]) || [];
 
   return (
     <div className="bg-slate-800 p-6 rounded-2xl">
@@ -10,7 +10,7 @@ export default function HourlyForecast() {
           <div key={i}>
             <p>{h}</p>
             <p className="text-yellow-400">☀️</p>
-            <p>27°</p>
+            <p>{data?.forecast?.forecastday[0]?.hour[i]?.temp_c}°</p>
           </div>
         ))}
       </div>

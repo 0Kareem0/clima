@@ -32,19 +32,14 @@ export default function App() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6">
         <div className="lg:col-span-2 space-y-6">
           <WeatherCard data={data} />
-          <HourlyForecast />
+          <HourlyForecast data={data} />
         </div>
 
         <div className="space-y-6">
-          <AirQualityCard />
-          <ForecastCard />
-          <SunCard />
+          <AirQualityCard data={data} />
+          <ForecastCard data={data} />
+          <SunCard data={data} />
         </div>
-
-        {/* <div>
-          <h1>{data?.location?.name}</h1>
-          <p>{data?.current?.temp_c}°C</p>
-        </div> */}
       </div>
     </div>
   );
