@@ -9,7 +9,7 @@ export default function HourlyForecast({ data }) {
         {hours.map((h, i) => (
           <div key={i}>
             <p>{h}</p>
-            <img src={data?.forecast?.forecastday[0]?.hour[i]?.condition?.icon} alt={data?.forecast?.forecastday[0]?.hour[i]?.condition?.text} />
+            <img className="w-9 h-9" src={data?.forecast?.forecastday[0]?.hour[i]?.condition?.icon} alt={data?.forecast?.forecastday[0]?.hour[i]?.condition?.text} />
             <p>{data?.forecast?.forecastday[0]?.hour[i]?.temp_c}°</p>
           </div>
         ))}
