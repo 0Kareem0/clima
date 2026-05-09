@@ -9,6 +9,7 @@ export default function App() {
   const [data, setData] = useState(null);
   const [city, setCity] = useState("suez");
   const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
+  console.log(data);
 
   useEffect(() => {
     const getWeather = async () => {
