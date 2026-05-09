@@ -22,14 +22,14 @@ export default function Header({ handleCitySearch }) {
         <span>Radar</span>
       </div>
 
-      <form onSubmit={onSubmit}>
+      <form className="flex gap-2" onSubmit={onSubmit}>
         <input
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           type="text"
           placeholder="Search city..."
         />
-        <button type="submit">Search</button>
+        <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors" type="submit">Search</button>
       </form>
     </div>
   );
