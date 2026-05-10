@@ -10,3 +10,5 @@ _______________________________________
 4. Explore object
 5. Build UI
 6. Use optional chaining
+_______________________________________
+okay this is the end of weather app cya
