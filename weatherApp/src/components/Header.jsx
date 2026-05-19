@@ -5,11 +5,11 @@ export default function Header({ handleCitySearch }) {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (inputValue.trim()) {
+     if (inputValue.trim()) {
       handleCitySearch(inputValue.trim());
       setInputValue("");
     }
-  };    
+  };   
 
   return (
     <div className="flex justify-between items-center">

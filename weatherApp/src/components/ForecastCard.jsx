@@ -22,4 +22,4 @@ export default function ForecastCard({ data }) {
       ))}
     </div>
   );
-}
+}y
